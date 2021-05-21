@@ -1,6 +1,13 @@
 import 'package:ecom_catalog/models/catalog.dart';
 
 class CartModel {
+
+  static final cartModel = CartModel._internal();
+
+  CartModel._internal();
+
+  factory CartModel()=> cartModel;
+
   //catalog feild
   CatalogModel _catalog;
   //collection of IDs - store IDs of each item
