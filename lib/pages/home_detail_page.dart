@@ -13,11 +13,12 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -27,14 +28,13 @@ class HomeDetailPage extends StatelessWidget {
                     onPressed: () {},
                     style: ButtonStyle(
                         shape: MaterialStateProperty.all(StadiumBorder()),
-                        backgroundColor:
-                            MaterialStateProperty.all(MyTheme.darkBluishColor)),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.buttonColor)),
                     child: "BUY".text.xl.make())
                 .wh(100, 50)
           ],
         ).p20(),
       ),
-      backgroundColor: MyTheme.creamColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -49,12 +49,12 @@ class HomeDetailPage extends StatelessWidget {
               edge: VxEdge.TOP,
               arcType: VxArcType.CONVEY,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
                     catalog.name.text.xl4
-                        .color(MyTheme.darkBluishColor)
+                        .color(context.accentColor)
                         .bold
                         .make(),
                     catalog.desc.text.xl.textStyle(context.captionStyle).make(),
