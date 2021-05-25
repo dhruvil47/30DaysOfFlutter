@@ -44,25 +44,29 @@ class HomeDetailPage extends StatelessWidget {
               height: 30.0,
               edge: VxEdge.TOP,
               arcType: VxArcType.CONVEY,
-              child: Container(
-                color: context.cardColor,
-                width: context.screenWidth,
-                child: Column(
-                  children: [
-                    catalog.name.text.xl4
-                        .color(context.accentColor)
-                        .bold
-                        .make(),
-                    catalog.desc.text.xl.textStyle(context.captionStyle).make(),
-                    10.heightBox,
-                    "Magna eos rebum ea et magna vero et erat no, et rebum dolore diam clita erat, sadipscing dolore tempor consetetur ipsum voluptua. Diam erat justo lorem amet at dolore at. Ipsum sadipscing gubergren et sanctus dolores aliquyam, lorem justo erat rebum vero est. Amet dolore dolor elitr ut ut, ea."
-                        .text
-                        .lg
-                        .textStyle(context.captionStyle)
-                        .make()
-                        .p16()
-                  ],
-                ).py64(),
+              child: SingleChildScrollView(
+                child: Container(
+                  color: context.cardColor,
+                  width: context.screenWidth,
+                  child: Column(
+                    children: [
+                      catalog.name.text.xl4
+                          .color(context.accentColor)
+                          .bold
+                          .make(),
+                      catalog.desc.text.xl
+                          .textStyle(context.captionStyle)
+                          .make(),
+                      10.heightBox,
+                      "Magna eos rebum ea et magna vero et erat no, et rebum dolore diam clita erat, sadipscing dolore tempor consetetur ipsum voluptua. Diam erat justo lorem amet at dolore at. Ipsum sadipscing gubergren et sanctus dolores aliquyam, lorem justo erat rebum vero est. Amet dolore dolor elitr ut ut, ea."
+                          .text
+                          .lg
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16()
+                    ],
+                  ).py64(),
+                ),
               ),
             ))
           ],
